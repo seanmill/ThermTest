@@ -1,0 +1,29 @@
+﻿@model EuroThermPatients.ViewModels.PatientListViewModel
+
+
+<div class="well pull-right">
+    <div>Logged in as @Model.Doctor.Name</div>
+    <div><a href="~/PatientList/AddPatient">Click to add patient record</a></div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>Birth Date</td>
+            <td>Note</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Model.Patients)
+        {
+            <tr>
+                <td>@patient.Name</td>
+                <td>@patient.Surname</td>
+                <td>@patient.BirthDateDisplay</td>
+                <td>@patient.Note</td>
+            </tr>
+        }
+    </tbody>
+</table>
