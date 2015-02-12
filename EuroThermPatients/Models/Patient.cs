@@ -7,7 +7,7 @@ namespace EuroThermPatients.Models
     {
         string name, surname;
 
-        [Required, MinLength(2)]
+        [Required, MinLength(3)]
         public string Name
         {
             get
@@ -24,7 +24,7 @@ namespace EuroThermPatients.Models
             }
         }
 
-        [Required, MinLength(3)]
+        [Required, MinLength(4)]
         public string Surname {
             get
             {
