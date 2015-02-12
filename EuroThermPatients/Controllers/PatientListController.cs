@@ -1,6 +1,7 @@
 ﻿using EuroThermPatients.Models;
 using EuroThermPatients.ViewModels;
 using System.Web.Mvc;
+using System.Linq;
 
 namespace EuroThermPatients.Controllers
 {
@@ -20,7 +21,7 @@ namespace EuroThermPatients.Controllers
             var model = new PatientListViewModel
             {
                 Doctor = doctor,
-                Patients = patientRepository.GetPatients(doctor)
+                Patients = patientRepository.GetPatients(doctor).OrderBy(x => x.Surname).ToList()
             };
             return View(model);
         }
